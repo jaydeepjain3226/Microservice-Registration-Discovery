@@ -16,6 +16,7 @@ import com.example.demo.filters.RouteFilter;
 @EnableZuulProxy
 
 @SpringBootApplication
+//this the main class for api-gateway
 public class ApiGatewayApplication {
 
 	public static void main(String[] args) {
