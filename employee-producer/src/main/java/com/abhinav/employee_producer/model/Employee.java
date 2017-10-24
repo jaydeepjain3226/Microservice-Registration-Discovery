@@ -1,8 +1,21 @@
 package com.abhinav.employee_producer.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+@Entity
 public class Employee {
-	
-	private String empId;
+	@Id
+	private int empId;
+	public Employee(int empId, String name, String designation, double salary) {
+		super();
+		this.empId = empId;
+		this.name = name;
+		this.designation = designation;
+		this.salary = salary;
+	}
+
 	private String name;
 	private String designation;
 	private double salary;
@@ -11,11 +24,11 @@ public class Employee {
 		
 	}
 
-	public String getEmpId() {
+	public int getEmpId() {
 		return empId;
 	}
 
-	public void setEmpId(String empId) {
+	public void setEmpId(int empId) {
 		this.empId = empId;
 	}
 
