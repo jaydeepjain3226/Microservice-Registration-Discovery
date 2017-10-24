@@ -25,7 +25,7 @@ public class ConsumerControllerClient {
 	
 	public void getEmployee() throws RestClientException, IOException {
 		
-		ServiceInstance serviceInstance=loadBalancer.choose("employee-producer");
+		ServiceInstance serviceInstance=loadBalancer.choose("API-GATEWAY");
 		
 		System.out.println(serviceInstance.getUri());
 		
@@ -33,7 +33,7 @@ public class ConsumerControllerClient {
 		
 		
 
-		baseUrl=baseUrl+"/emp";
+		baseUrl=baseUrl+"/producer/emp";
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<String> response=null;
 		try{
