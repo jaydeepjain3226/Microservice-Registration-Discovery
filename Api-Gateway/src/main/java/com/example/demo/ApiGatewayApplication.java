@@ -12,10 +12,11 @@ import com.example.demo.filters.PostFilter;
 import com.example.demo.filters.PreFilter;
 import com.example.demo.filters.RouteFilter;
 
-@EnableDiscoveryClient
-@EnableZuulProxy
+
 
 @SpringBootApplication
+@EnableDiscoveryClient
+@EnableZuulProxy
 //this the main class for api-gateway
 public class ApiGatewayApplication {
 

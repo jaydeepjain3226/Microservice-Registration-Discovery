@@ -31,6 +31,8 @@ public class ConsumerControllerClient {
 		
 		String baseUrl=serviceInstance.getUri().toString();
 		
+		String baseUrlReport=serviceInstance.getUri().toString();
+		
 		
 
 		baseUrl=baseUrl+"/producer/emp";
@@ -44,7 +46,28 @@ public class ConsumerControllerClient {
 			System.out.println(ex);
 		}
 		System.out.println(response.getBody());
+		System.out.println(baseUrl);
+		
+		
+		baseUrlReport=baseUrlReport+"/reporting/v1.0/repotringservice/report";
+		System.out.println(baseUrlReport);
+
+		RestTemplate restTemplateReport = new RestTemplate();
+		ResponseEntity<String> response1=null;
+		try{
+		response1=restTemplateReport.exchange(baseUrlReport,
+				HttpMethod.GET, getHeaders(),String.class);
+		}catch (Exception ex)
+		{
+			System.out.println(ex);
+		}
+		System.out.println(response1.getBody());
+		
+	
+		
 	}
+	
+	
 
 	private static HttpEntity<?> getHeaders() throws IOException {
 		HttpHeaders headers = new HttpHeaders();
